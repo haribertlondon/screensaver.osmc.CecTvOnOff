@@ -27,7 +27,7 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         else:
             cmd1 = ['echo', 'on', '0'] 
         try:
-            cmd2 = ['/usr/osmc/bin/cec-client', '-d', '1', '-s']
+            cmd2 = ['cec-client', '-d', '1', '-s']
             ps1 = subprocess.Popen((cmd1), stdout=subprocess.PIPE)
             ps2 = subprocess.Popen((cmd2), stdin=ps1.stdout, stdout=subprocess.PIPE)
             (out, err) = ps2.communicate()
